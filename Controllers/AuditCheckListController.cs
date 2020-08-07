@@ -17,6 +17,7 @@ namespace AuditCheckList.Controllers
         {
             _log4net = log4net.LogManager.GetLogger(typeof(AuditCheckListController));
         }
+        
         [HttpGet]
         [Authorize]
         [ProducesResponseType(200)]
@@ -28,7 +29,7 @@ namespace AuditCheckList.Controllers
 
             if (AuditType != "Internal" && AuditType!="SOX")
             {
-                _log4net.Info($"AuditChceklist Get Method invoked with Invalid AuditType");                                  //Invalid Audit TYpe
+                _log4net.Info($"AuditChceklist Get Method invoked with Invalid AuditType");                                  //Invalid Audit Type
                 return BadRequest("Invalid Input");                                                                 // return BadRequest
             }
 
